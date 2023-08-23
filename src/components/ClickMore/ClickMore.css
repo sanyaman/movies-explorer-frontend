@@ -1,0 +1,30 @@
+.click-more {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.click-more__hide {
+    display: none;
+}
+
+.click-more__button {
+    width: 320px;
+    padding: 20px 60px 9px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #000;
+    border-radius: 6px;
+    border: 1px solid #F9F9F9;
+    background-color: #F9F9F9;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    .click-more__button {
+        width: 240px;
+        padding: 11px 20px 9px;
+    }
+}
