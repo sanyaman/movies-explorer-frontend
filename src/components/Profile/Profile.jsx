@@ -1,9 +1,10 @@
 import { React, useState } from 'react';
 import './Profile.css';
 import Header from '../Header/Header';
+import { Link } from 'react-router-dom';
 
 function Profile() {
-    const [currentUser, setCurrentUser] = useState({ name: 'sanyaman', email: 'penta@gon.com' });
+    const [currentUser, setCurrentUser] = useState({ name: 'Sanyaman', email: 'penta@gon.com' });
     const [profileData, setProfileData] = useState(currentUser);
     const [readOnly, setReadOnly] = useState(true);
     const [profileChanged, setProfileChanged] = useState(false);
@@ -34,7 +35,6 @@ function Profile() {
             return (
                 <>
                     <button className="profile__button profile__button_edit" onClick={toggleProfileReadOnly} type='button'>Редактировать</button>
-                    <button className="profile__button profile__button_logout" onClick={handleLogOut} type='button'>Выйти из аккаунта</button>
                 </>)
         }
         return (
@@ -76,6 +76,9 @@ function Profile() {
                     </div>
                 </form>
                 {buttonsMarkup()}
+                <Link  to={'/'}
+                className='profile__button profile__button_logout' onClick={handleLogOut}> Выйти из аккаунта
+                </Link>
             </main>
         </section>
     )

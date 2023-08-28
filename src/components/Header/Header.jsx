@@ -1,7 +1,7 @@
 import './Header.css';
 import { Link } from 'react-router-dom';
 import NavTab from '../NavTab/NavTab';
-import logo from '../../images/logo3.svg';
+import logo from '../../images/logo_light1.svg';
 
 function Header({ isLogged }) {
     return (

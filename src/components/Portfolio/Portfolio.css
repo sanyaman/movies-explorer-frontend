@@ -1,5 +1,5 @@
 .portfolio {
-    padding: 0 70px 125px;
+    padding: 0 70px 155px;
 }
 
 .portfolio__title {
@@ -18,7 +18,10 @@
 
 .portfolio__list-item {
     border-bottom: 1px solid #E8E8E8;
-    padding: 20px 0 19px;
+    padding: 20px 0 9px;
+}
+.portfolio__list-item:last-of-type {
+    border-bottom: none;
 }
 
 .portfolio__item:last-child {
@@ -45,7 +48,7 @@
 
 @media screen and (max-width: 768px) {
     .portfolio {
-        padding: 0 50px 90px;
+        padding: 0 50px 80px;
     }
 
     .portfolio__list-item {
@@ -63,12 +66,13 @@
 
 @media screen and (max-width: 480px) {
     .portfolio {
-        padding: 0 14px 60px;
+        padding: 0 14px 80px;
     }
 
     .portfolio__link {
         font-size: 18px;
         line-height: 28px;
+        letter-spacing: -0.72px
     }
 
     .portfolio__website {

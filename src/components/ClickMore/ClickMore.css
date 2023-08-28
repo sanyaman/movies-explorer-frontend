@@ -7,10 +7,18 @@
 .click-more__hide {
     display: none;
 }
+.show-padding {
+    padding-top: 100px;
+
+}
+.show-padding__hide {
+    display: none;
+
+}
 
 .click-more__button {
     width: 320px;
-    padding: 20px 60px 9px;
+    padding: 11px 60px 9px;
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
@@ -21,6 +29,15 @@
     background-color: #F9F9F9;
     cursor: pointer;
 }
+
+
+@media screen and (max-width: 768px) {
+    .show-padding {
+        padding-top: 10px;
+    
+    }
+}
+
 
 @media screen and (max-width: 480px) {
     .click-more__button {

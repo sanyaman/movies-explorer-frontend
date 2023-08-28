@@ -21,7 +21,7 @@ function App() {
         <Route path='/signin' element={<Login />} />
         <Route path='/signup' element={<Register />} />
         <Route path='/profile' element={<Profile />} />
-        <Route path='error' element={<NotFoundError />} />
+        <Route path='/error' element={<NotFoundError />} />
       </Routes>
     </div>
   )

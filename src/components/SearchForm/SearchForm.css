@@ -45,7 +45,7 @@
 
 .search__input::placeholder {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 28px;
     line-height: 20px;
     color: #8B8B8B;
 }
@@ -172,7 +172,7 @@ input:checked+.search__checkbox-slider:before {
     }
 
     .search__input-cover {
-        padding-top: 13px;
+        padding-top: 15px;
         border: none;
     }
 
@@ -201,4 +201,8 @@ input:checked+.search__checkbox-slider:before {
     .search__checkbox-cover {
         margin: 0 auto 45px;
     }
+    .search__input::placeholder { 
+        font-size: 18px;
+    }
 }
+

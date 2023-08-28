@@ -68,7 +68,7 @@ const movies = [
     {
         image: movie8,
         duration: 109,
-        nameRU: 'Gimme Danger: История Игги и The Stooges',
+        nameRU: 'Gimme Danger: История Игги',
         saved: false,
         id: 8,
     },

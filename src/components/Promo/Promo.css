@@ -1,7 +1,7 @@
 .promo {
     display: flex;
     justify-content: space-between;
-    padding: 90px 70px 50px;
+    padding: 93px 70px 50px;
     background-color: #073042;
 }
 
@@ -83,7 +83,7 @@
 
 @media screen and (max-width: 480px) {
     .promo {
-        padding: 90px 10px 30px;
+        padding: 87px 10px 30px;
         gap: 44px;
     }
 
