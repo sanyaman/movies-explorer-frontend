@@ -1,87 +1,104 @@
-import { React, useState } from 'react';
+import { React, useState, useContext, useEffect } from 'react';
 import './Profile.css';
 import Header from '../Header/Header';
-import { Link } from 'react-router-dom';
+import { CurrentUserContext } from '../../context/CurrentUserContext';
+import { validateName, validateEmail } from '../../utils/validateInput';
+import useForm from '../../hooks/useFormAuth';
 
-function Profile() {
-    const [currentUser, setCurrentUser] = useState({ name: 'Sanyaman', email: 'penta@gon.com' });
-    const [profileData, setProfileData] = useState(currentUser);
-    const [readOnly, setReadOnly] = useState(true);
-    const [profileChanged, setProfileChanged] = useState(false);
+function Profile({ onProfileUpdate, onSignOut, isLoading }) {
+  const currentUser = useContext(CurrentUserContext);
+  const [isShowSaveButton, setShowSaveButton] = useState(false);
+  const { values, errors, isFormValid, setIsFormValid, setValues, handleChange, formRef } = useForm();
 
-    function handleProfileChange(evt) {
-        const { value, name } = evt.target;
-        setProfileChanged(true);
-        setProfileData({ ...profileData, [name]: value });
-    };
+  useEffect(() => {
+    setValues((userData) => ({ ...userData, name: currentUser.name, email: currentUser.email }))
+  }, [currentUser, setValues]);
 
-    function toggleProfileReadOnly() {
-        setReadOnly(!readOnly);
-    };
+  useEffect(() => {
+    if (currentUser.name === values.name && currentUser.email === values.email) {
+      setIsFormValid(false);
+    }
+  }, [currentUser, values, setIsFormValid])
 
-    function handleProfileSubmit(evt) {
-        evt.preventDefault();
-        setProfileChanged(false);
-        toggleProfileReadOnly();
-        setCurrentUser(profileData);
-    };
+  const handleEditButtonClick = () => {
+    setShowSaveButton(true);
+  };
 
-    function handleLogOut() {
-        setCurrentUser({})
-    };
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    onProfileUpdate(values);
+    if (errors && validateName(values.name).invalid && validateEmail(values.email).invalid) {
+      setShowSaveButton(true);
+    } else {
+      setShowSaveButton(false);
+    }
+  };
 
-    const buttonsMarkup = () => {
-        if (readOnly) {
-            return (
-                <>
-                    <button className="profile__button profile__button_edit" onClick={toggleProfileReadOnly} type='button'>Редактировать</button>
-                </>)
-        }
-        return (
-            <button className={`profile__button-save ${!profileChanged ? 'profile__button-save_disabled' : ''}`} disabled={!profileChanged} type='submit'>Сохранить</button>
-        )
-    };
-
-    return (
-        <section className='profile'>
-            <Header isLogged={true} />
-            <main className='profile__collapse'>
-                <h2 className='profile__title'>{`Привет, ${currentUser.name}!`}</h2>
-                <form className='profile__form' onSubmit={handleProfileSubmit}>
-                    <div className='profile__form-item'>
-                        <label className='profile__label'>Имя</label>
-                        <input
-                            className='profile__input'
-                            name='name'
-                            type='text'
-                            value={currentUser.name || ''}
-                            onChange={handleProfileChange}
-                            disabled={readOnly}
-                            required
-                            placeholder='Имя'
-                        />
-                    </div>
-                    <div className='profile__form-item'>
-                        <label className="profile__label">E-mail</label>
-                        <input
-                            className='profile__input'
-                            name='email' 
-                            type='email'
-                            value={currentUser.email || ''}
-                            onChange={handleProfileChange}
-                            disabled={readOnly}
-                            required
-                            placeholder='E-mail'
-                        />
-                    </div>
-                </form>
-                {buttonsMarkup()}
-                <Link  to={'/'}
-                className='profile__button profile__button_logout' onClick={handleLogOut}> Выйти из аккаунта
-                </Link>
-            </main>
-        </section>
-    )
+  return (
+    <section className='profile'>
+      <Header isLogged={true} />
+      <main className='profile__collapse'>
+        <h2 className='profile__title'>{`Привет, ${currentUser.name}!`}</h2>
+        <form className='profile__form' onSubmit={handleSubmit} noValidate ref={formRef} >
+          <div className='profile__form-item'>
+            <div className='profile__input-collapse'>
+              <label className='profile__label'>Имя</label>
+              <input
+                className={`profile__input ${errors.name ? 'error' : ''}`}
+                name='name'
+                type='text'
+                id='name'
+                value={values.name || ''}
+                onChange={handleChange}
+                onFocus={handleEditButtonClick}
+                disabled={isLoading}
+                required
+                placeholder='Имя'
+                minLength={2}
+                maxLength={30}
+              />
+            </div>
+          </div>
+          <span className='profile__error'>{errors.name || validateName(values.name).message}</span>
+          <div className='profile__form-item'>
+            <div className='profile__input-collapse'>
+              <label className='profile__label'>E-mail</label>
+              <input
+                className={`profile__input ${errors.email ? 'error' : ''}`}
+                name='email'
+                type='email'
+                id='email'
+                value={values.email || ''}
+                onChange={handleChange}
+                onFocus={handleEditButtonClick}
+                disabled={isLoading}
+                required
+                placeholder='E-mail'
+              />
+            </div>
+            <span className='profile__error'>{errors.email || validateEmail(values.email).message}</span>
+          </div>
+          {isShowSaveButton && !isLoading && (
+            <>
+              <button type='submit' className='profile__button-save' disabled={!isFormValid || validateName(values.name).invalid || validateEmail(values.email).invalid || (errors.email && 'error')}>
+                Сохранить
+              </button>
+            </>
+          )}
+          {!isShowSaveButton && !isLoading && (
+            <>
+              <button type='button' className='profile__button profile__button_edit' onClick={handleEditButtonClick} >
+                Редактировать
+              </button>
+              <button type='button' className='profile__button profile__button_logout' onClick={onSignOut} >
+                Выйти из аккаунта
+              </button>
+            </>
+          )}
+        </form>
+      </main>
+    </section>
+  );
 };
 
 export default Profile;

@@ -11,7 +11,7 @@ function Portfolio() {
                     </a>
                 </li>
                 <li className='portfolio__list-item'>
-                    <a className='portfolio__link'  rel='noreferrer' target='_blank' href='https://sanyaman.github.io/russian-travel'>Адаптивный сайт
+                    <a className='portfolio__link' rel='noreferrer' target='_blank' href='https://sanyaman.github.io/russian-travel'>Адаптивный сайт
                         <span className='portfolio__website'>&#x2197;</span>
                     </a>
                 </li>

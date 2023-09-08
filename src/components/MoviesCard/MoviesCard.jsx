@@ -1,37 +1,53 @@
 import './MoviesCard.css';
+import { MovieDuration } from '../../utils/constans';
 
-function MoviesCard({ movie, isSavedMoviesPage }) {
-    function formatMovieDuration(duration) {
-        if (duration >= 60) {
-            const minutes = duration % 60;
-            return `${Math.floor(duration / 60)}ч ${minutes > 0 ? minutes + 'м' : ''}`
-        }
-        return `${duration}м`
-    };
+function MoviesCard({ movie, isSavedMoviesPage, onDelete, onSave, isSaved, link }) {
+  const { nameRU, duration, trailerLink } = movie;
 
-    const { nameRU, image, duration, saved } = movie;
-    const formatedDuration = formatMovieDuration(duration);
+  function handleDeleteMovie() {
+    onDelete(movie);
+  };
 
-    const buttonClass = () => {
-        if (saved && !isSavedMoviesPage) {
-            return 'movies-card__button_activ'
-        }
-        else if (isSavedMoviesPage) {
-            return 'movies-card__button_remove'
-        }
-        return 'movies-card__button_save';
-    };
+  function handleSaveMovie() {
+    onSave(movie);
+  };
 
+  const getButtonMarkup = () => {
+    if (isSaved && !isSavedMoviesPage) {
+      return (
+        <button
+          className='movies-card__buttone movies-card__buttone_save_active'
+          onClick={handleDeleteMovie}
+        />
+      );
+    } else if (isSavedMoviesPage) {
+      return (
+        <button
+          className='movies-card__buttone movies-card__buttone_remove'
+          onClick={handleDeleteMovie}
+        />
+      );
+    }
     return (
-        <li className='movies-card'>
-            <img className='movies-card__image' src={image} alt={nameRU} />
-            <div className='movies-card__description'>
-                <h3 className='movies-card__title'>{nameRU}</h3>
-                <button className={`movies-card__button ${buttonClass()}`} />
-            </div>
-            <p className='movies-card__duration'>{formatedDuration}</p>
-        </li>
+      <button
+        className='movies-card__buttone movies-card__buttone_save'
+        onClick={handleSaveMovie}
+      />
     );
+  };
+
+  return (
+    <li className='movies-card'>
+      <a href={trailerLink} target='_blanck'>
+        <img className='movies-card__image' src={link} alt={nameRU} />
+      </a>
+      <div className='movies-card__description'>
+        <h3 className='movies-card__title'>{nameRU}</h3>
+        {getButtonMarkup()}
+      </div>
+      <p className='movies-card__duration'>{MovieDuration(duration)}</p>
+    </li>
+  );
 };
 
 export default MoviesCard;

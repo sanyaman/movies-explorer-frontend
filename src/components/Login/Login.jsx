@@ -1,15 +1,10 @@
-import AuthorizationForms from "../AuthorizationForms/AuthorizationForms";
-import Input from '../Input/Input';
+import AuthorizationForms from '../AuthorizationForms/AuthorizationForms';
 
-function Login() {
+function Login({ onLogin }) {
+    const text = { title: 'Рады видеть!', buttonText: 'Войти', questText: 'Ещё не зарегистрированы?' }
     return (
-        <AuthorizationForms
-            title='Рады видеть!'
-            buttonText='Войти'>
-                    <Input title='E-mail' id='email' name='email' type='email' ></Input>
-                    <Input title='Пароль' id='password' name='password' type='password' ></Input>
-        </AuthorizationForms>
+        <AuthorizationForms type={'signin'} text={text} onSubmitForm={onLogin} />
     )
-}
+};
 
 export default Login;

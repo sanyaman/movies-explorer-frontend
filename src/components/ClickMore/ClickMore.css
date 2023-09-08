@@ -1,19 +1,12 @@
 .click-more {
-    margin: 0;
+    margin: 50px 0 80px;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .click-more__hide {
     display: none;
-}
-.show-padding {
-    padding-top: 100px;
-
-}
-.show-padding__hide {
-    display: none;
-
 }
 
 .click-more__button {
@@ -25,22 +18,13 @@
     text-align: center;
     color: #000;
     border-radius: 6px;
-    border: 1px solid #F9F9F9;
-    background-color: #F9F9F9;
+    border: 1px solid #f9f9f9;
+    background-color: #f9f9f9;
     cursor: pointer;
 }
 
-
-@media screen and (max-width: 768px) {
-    .show-padding {
-        padding-top: 10px;
-    
-    }
-}
-
-
 @media screen and (max-width: 480px) {
-    .click-more__button {
+    .click-more__btn {
         width: 240px;
         padding: 11px 20px 9px;
     }

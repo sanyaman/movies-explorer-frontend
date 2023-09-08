@@ -7,12 +7,11 @@
     bottom: 0;
     z-index: 1;
     position: fixed;
-    
 }
 
 .hamburger__cover {
     background-color: #FFF;
-    width: 70%;
+    width: 67%;
     height: 100%;
     top: 0;
     right: 0;
@@ -45,7 +44,6 @@
     margin-top: 159px;
     gap: 28px;
     align-items: center;
-    
 }
 
 .hamburger__link {
@@ -74,16 +72,17 @@
     margin-bottom: 46px;
     gap: 7px;
     border-radius: 50px;
+    flex-direction: row-reverse;
     border: none;
     text-decoration: none;
     box-shadow: rgba(87, 89, 91, 0.2) 0px 8px 24px;
 }
 
 @media screen and (min-width: 768px) {
-    
+
 
     .hamburger__account-button {
-        margin-bottom: 90px;
+        margin-bottom: 85px;
     }
 }
 
@@ -94,9 +93,12 @@
 
     .hamburger__menu {
         margin-top: 144px;
+        gap: 21px;
     }
 
     .hamburger__account-button {
         margin-bottom: 46px;
+        font-size: 13px;
+        gap: 15px;
     }
 }

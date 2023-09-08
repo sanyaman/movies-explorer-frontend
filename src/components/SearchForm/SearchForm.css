@@ -1,19 +1,19 @@
 .search {
-    padding: 0;
+    padding: 50px 70px 0;
 }
 
 .search__form {
-    height: 72px;
+    height: 70px;
     margin-bottom: 69px;
     display: flex;
     align-items: center;
     position: relative;
-    border-bottom: 1px solid #E8E8E8;
-    max-width: 1140px;
+    border-bottom: 1px solid #e8e8e8;
+    width: 100%;
 }
 
 .search__form:focus-within {
-    outline: 2px solid #FFF;
+    outline: 2px solid #fff;
 }
 
 .search__input-cover {
@@ -34,7 +34,7 @@
     background: none;
     border: none;
     outline: none;
-    color: #A0A0A0;
+    color: #a0a0a0;
     cursor: pointer;
     padding: 0;
 }
@@ -47,136 +47,75 @@
     font-weight: 400;
     font-size: 28px;
     line-height: 20px;
-    color: #8B8B8B;
+    color: #8b8b8b;
 }
 
 .search__button {
     width: 59px;
     height: 34px;
-    background-color: #3456F3;
+    background-color: #3456f3;
     border-radius: 48px;
     border-style: none;
     outline: none;
     font-weight: 500;
     font-size: 11px;
     line-height: 18px;
-    color: #FFF;
+    color: #fff;
     padding: 0;
     transition: opacity 0.25s;
     cursor: pointer;
+}
+
+.search__button:disabled {
+    opacity: 0.5;
+}
+
+.search__button:disabled:hover {
+    opacity: 0.5;
+    cursor: default;
 }
 
 .search__button:hover {
     opacity: 0.7;
 }
 
-.search__checkbox-cover {
+.search__input-error {
     display: flex;
-    gap: 14px;
-    transition: opacity 0.25s;
-    align-items: center;
-    position: absolute;
-    top: 100px;
-    flex-direction: inherit;
-}
-
-.search__checkbox-cover:hover {
-    opacity: 0.7;
-}
-
-.search__checkbox-switch {
-    width: 34px;
-    height: 14px;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-}
-
-.search__checkbox-switch input {
-    display: none;
-}
-
-.search__checkbox-slider {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    cursor: pointer;
-    transition: .3s;
-    background-color: #C4C4C4;
-}
-
-.search__checkbox-slider:focus-within {
-    outline: 2px solid #FFF;
-}
-
-.search__checkbox-slider:before {
-    width: 10px;
-    position: absolute;
-    background-color: #EBEBEB;
-    bottom: 2px;
-    content: "";
-    height: 10px;
-    left: 2px;
-    transition: .3s;
-}
-
-input:checked+.search__checkbox-slider {
-    background-color: #2BE080;
-    outline: none;
-}
-
-input:checked+.search__checkbox-slider:before {
-    transform: translateX(20px);
-    background-color: #FFF;
-    outline: 2px solid #2BE080;
-}
-
-.search__checkbox-slider.round {
-    border-radius: 20px;
-}
-
-.search__checkbox-slider.round:before {
-    border-radius: 50%;
-}
-
-.search__checkbox-title {
-    margin: 0 auto;
-    font-weight: 400;
+    justify-content: space-around;
+    color: #ff3055;
     font-size: 13px;
-    line-height: 18px;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 4px;
+    margin: 0;
+    min-height: 16px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 13px;
+    opacity: 0;
 }
 
+.search__input-error_visible {
+    opacity: 1;
+}
 
 @media screen and (max-width: 768px) {
-    .search__form {
-        justify-content: end;
+    .search {
+        padding: 55px 30px 0;
     }
 
-    .search__input-cover {
-        justify-content: space-between;
-    }
-    .search__checkbox-cover {
-        flex-direction: row-reverse;
+    .search__form {
+        justify-content: end;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .search__form {
-        margin-bottom: 109px;
-    }
-
-    .search__icon {
-        display: none;
-    }
-
     .search__input-cover {
         padding-top: 15px;
         border: none;
     }
 
-    .search__checkbox-cover {
+    .search__checkbox-wrap {
         padding: 0;
         position: absolute;
         top: 110px;
@@ -187,22 +126,28 @@ input:checked+.search__checkbox-slider:before {
     }
 }
 
-@media screen and (max-width: 480px) {
-    .search__input { 
-        font-size: 18px;
-    }
-    .search__form {
-        justify-content: center;
-    }
+@media screen and (max-width: 550px) {
     .search__icon {
         display: none;
     }
 
-    .search__checkbox-cover {
+    .search__input {
+        font-size: 18px;
+    }
+
+    .search__checkbox-wrap {
         margin: 0 auto 45px;
     }
-    .search__input::placeholder { 
+
+    .search__form {
+        justify-content: center;
+    }
+
+    .search {
+        padding: 51px 14px 0;
+    }
+
+    .search__input::placeholder {
         font-size: 18px;
     }
 }
-

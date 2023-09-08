@@ -1,47 +1,50 @@
 .movies-card {
+    max-width: 364px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: #FDFDFD;
-    border-radius: 6px;
+    background: #fdfdfd;
 }
 
 .movies-card__image {
     width: 100%;
+    height: 151px;
+    display: block;
     object-fit: cover;
+    object-position: center;
 }
 
 .movies-card__description {
     display: flex;
     justify-content: space-between;
-    padding: 16px 0px 17px;
-    border-bottom: solid 1px #E8E8E8; 
+    padding: 16px 0px 25px;
+    border-bottom: solid 1px #e8e8e8;
 }
 
-
 .movies-card__title {
-    font-weight: 500;
-    font-size: 13px;
-    /* line-height: normal; */
     max-width: 290px;
     margin: 0;
-    overflow: hidden;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
     text-overflow: ellipsis;
-    
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .movies-card__duration {
     font-weight: 400;
     font-size: 11px;
     line-height: 13px;
-    color: #A0A0A0;
+    color: #a0a0a0;
     margin: 0;
     padding: 8px 0 0;
 }
 
-.movies-card__button {
-    width: 30px;
-    height: 30px;
+.movies-card__buttone {
+    width: 24px;
+    height: 24px;
     padding: 0;
     margin-top: -6px;
     border: none;
@@ -50,38 +53,42 @@
     transition: opacity 0.25s;
 }
 
-.movies-card__button:hover {
+.movies-card__buttone:hover {
     opacity: 0.6;
 }
 
-.movies-card__button_activ {
-    background: url('../../images/heart-activ.svg') no-repeat center;
+.movies-card__buttone_save_active {
+    background: url("../../images/heart-activ.svg") no-repeat center;
 }
 
-.movies-card__button_remove {
-    background: url('../../images/remove_film.svg') no-repeat center;
+.movies-card__buttone_remove {
+    background: url("../../images/remove_film.svg") no-repeat center;
     visibility: hidden;
 }
 
-.movies-card:hover .movies-card__button_remove {
+.movies-card:hover .movies-card__buttone_remove {
     visibility: visible;
 }
 
-.movies-card__button_save {
-    background: url('../../images/heart.svg') no-repeat center;
+.movies-card__buttone_save {
+    background: url("../../images/heart.svg") no-repeat center;
 }
 
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 890px) {
     .movies-card {
-        width: 339px;
-    } 
+        max-width: 339px;
+    }
 
     .movies-card__description {
-        padding: 14px 0px 20px;
+        padding: 14px 0px 27px;
     }
 
     .movies-card__duration {
         padding: 8px 0px 0px;
+    }
+
+    .movies-card__image {
+        height: 190px;
     }
 }
 
@@ -98,5 +105,14 @@
     .movies-card__duration {
         font-size: 10px;
         line-height: 12px;
+        padding: 8px 0px 0px;
+    }
+
+    .movies-card__description {
+        padding: 14px 0px 25px;
+    }
+
+    .movies-card__image {
+        height: 168px;
     }
 }

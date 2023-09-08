@@ -1,6 +1,6 @@
 import './BurgerMenu.css';
 import { NavLink } from 'react-router-dom';
-import account from '../../images/icon_accaunt2.svg';
+import account from '../../images/NIGER.svg';
 
 function BurgerMenu({ onClose }) {
     return (

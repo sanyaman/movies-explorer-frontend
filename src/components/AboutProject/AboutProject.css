@@ -1,10 +1,10 @@
 .about-project {
-    margin: 110px 70px;
+    padding: 110px 70px;
 }
 
 .about-project__description {
     margin-bottom: 110px;
-    padding-top: 70px;
+    padding-top: 69px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
@@ -40,16 +40,15 @@
 }
 
 .about-project__week-line_backend {
-    background: #2BE080;
-    
+    background-color: #2be080;
 }
 
 .about-project__week-line_frontend {
-    background: #F2F2F2;
+    background-color: #f2f2f2;
 }
 
 .about-project__week-description {
-    color: #A0A0A0;
+    color: #a0a0a0;
     text-align: center;
     font-size: 14px;
     font-weight: 500;
@@ -60,11 +59,11 @@
 
 @media screen and (max-width: 768px) {
     .about-project {
-        margin: 100px 50px;
+        padding: 100px 50px;
     }
 
     .about-project__description {
-        margin-bottom: 93px;
+        margin-bottom: 90px;
         padding-top: 70px;
         gap: 30px;
     }
@@ -85,7 +84,7 @@
 
 @media screen and (max-width: 480px) {
     .about-project {
-        margin: 71px 18px;
+        padding: 70px 18px;
     }
 
     .about-project__description {
