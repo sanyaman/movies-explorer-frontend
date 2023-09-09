@@ -68,14 +68,14 @@ function App() {
               .then((savedMoviesData) => {
                 setSavedMovies(savedMoviesData);
               })
-              .catch((err) => console.log("Ошибка:", err));
+              .catch(err => console.error(err));
           })
-          .catch((err) => console.log("Ошибка:", err));
+          .catch(err => console.error(err));
       }
     } catch (err) {
-      console.log("Ошибка:", err);
+      console.error(err);
     }
-  }
+  };
 
   function onRegister(values) {
     const { name, email, password } = values;
@@ -117,9 +117,9 @@ function App() {
           handleSuccessMessage(successMessages.logout);
           localStorage.clear();
         })
-        .catch((err) => console.log("Ошибка:", err));
-    }
-  }
+        .catch(err => console.log(err))
+      }
+    };
 
   function handleUpadteUserInfo(values) {
     const { name, email } = values;
@@ -129,8 +129,8 @@ function App() {
         setCurrentUser(res);
         handleSuccessMessage(successMessages.editProfile);
       })
-      .catch(() => handleErrorMessage(errorMessages.userEmailExists));
-  }
+      .catch(() => handleErrorMessage(errorMessages.emailExists))
+    };
 
   function showMovieSearch() {
     setIsLoading(true);
@@ -149,8 +149,8 @@ function App() {
         setSavedMovies([movie, ...savedMovies]);
         handleSuccessMessage(successMessages.saveMovie);
       })
-      .catch((err) => console.log("Ошибка:", err));
-  }
+      .catch(err => console.log(err))
+  };
 
   function handleDeleteMovie(movie) {
     api
@@ -161,8 +161,8 @@ function App() {
         );
         handleSuccessMessage(successMessages.deleteMovie);
       })
-      .catch((err) => console.log("Ошибка:", err));
-  }
+      .catch(err => console.log(err))
+    };
 
   function getSavedMovies() {
     if (isLogged) {
@@ -180,9 +180,9 @@ function App() {
           );
           setLikedMovies(likedMovies);
         })
-        .catch((err) => console.log("Ошибка:", err));
+        .catch((err) => console.log(err));
     }
-  }
+  };
 
   useEffect(() => {
     getSavedMovies();
