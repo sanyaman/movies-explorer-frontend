@@ -1,4 +1,5 @@
 import "./App.css";
+import "../Animation/animation.css"
 import { Route, Routes, useNavigate, useLocation, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { CurrentUserContext } from "../../context/CurrentUserContext";

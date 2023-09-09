@@ -9,7 +9,7 @@ function Promo() {
                 <p className="promo__subtitle">Листайте ниже, чтобы узнать больше про этот проект и его создателя.</p>
                 <a className="promo__link" href='#learn-more'>Узнать больше</a>
             </div>
-            <img className="promo__logo-image" src={projectLogo} alt="Логотип проекта" />
+            <img className="promo__logo-image circle"  src={projectLogo} alt="Логотип проекта" />
         </section>
     )
 };
