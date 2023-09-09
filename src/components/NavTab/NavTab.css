@@ -1,123 +1,210 @@
 .nav-place {
-    display: flex;
-    gap: 30px;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    align-items: center;
+  display: flex;
+  gap: 30px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  align-items: center;
 }
 
 .nav-place__link-reg {
-    text-decoration: none;
-    color: #FFF;
+  text-decoration: none;
+  color: #fff;
 }
 
 .nav-place__link-login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 76px;
-    height: 32px;
-    font-weight: 500;
-    border-radius: 3px;
-    background-color: #2BE080;
-    text-decoration: none;
-    color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 32px;
+  font-weight: 500;
+  border-radius: 3px;
+  background-color: #2be080;
+  text-decoration: none;
+  color: #000;
 }
 
 .nav-movies {
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 60%;
-    height: 44px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  height: 44px;
 }
 
 .nav-movies__links {
-    display: flex;
-    gap: 16px;
-    padding-left: 10px;
+  display: flex;
+  gap: 16px;
+  padding-left: 10px;
+  text-decoration: none;
 }
 
 .nav-movies__link {
-    text-decoration: none;
-    color: #000;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 18px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.nav-movies__link_place {
+  color: #ffffff;
 }
 
 .nav-movies__link_active {
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 18px;
-    text-decoration: none;
-    color: #000;
-
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  text-decoration: none;
+  color: #000;
 }
 
-
 .nav-movies__account-button {
-    width: 100px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 11px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    text-decoration: none;
-    color: #000;
-    border-radius: 50px;
-    border: 2px solid rgba(170, 170, 170, .2);
-    flex-direction: row-reverse;
-    box-shadow: 0px -1px 20px 6px #F9F9F9;
+  background-color: rgba(255, 255, 255, 0);
+  text-decoration: none;
+  border-radius: 40px;
+  background: #fff;
+  box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.08);
+}
+
+.nav-place__account-button {
+  background-color: #2be080;
+  text-decoration: none;
+  border-radius: 40px;
+  color: #fff;
+}
+
+.nav-movies__account-conteiner {
+  width: 100px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 12px;
+  text-decoration: none;
+  color: #000;
+  border-radius: 50px;
+  flex-direction: row-reverse;
+  box-shadow: 0px 1px 13px 1px rgba(249, 249, 249, 0.13);
+  text-decoration: none;
+}
+
+.nav-place__account-conteiner {
+  width: 100px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 12px;
+  text-decoration: none;
+  color: #000;
+  border-radius: 50px;
+  flex-direction: row-reverse;
+  box-shadow: 0px 1px 13px 1px rgba(249, 249, 249, 0.13);
+  text-decoration: none;
+  margin-left: 2px;
 }
 
 .nav-movies__account-button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.nav-movies__burger-button {
-    width: 44px;
-    height: 44px;
-    padding: 0;
-    background: none;
-    background-image: url('../../images/burger_logo.svg');
-    border: none;
-    display: none;
+.nav-place__account-button-img {
+  border-radius: 20px;
+  background: #f9f9f9;
+  width: 26px;
+  height: 26px;
+  object-fit: scale-down;
+}
+
+.nav-movies__account-button-img {
+  background: #ffffff00;
+}
+
+.nav-movies__account-button-title {
+  width: 57px;
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: none;
+  color: #000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-movies__hamburger-buttone {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: none;
+  background-image: url("../../images/burger_logo.svg");
+  border: none;
+  display: none;
+}
+
+.nav-movies__hamburger-buttone-white {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: none;
+  background-image: url("../../images/burger_logo-white.svg");
+  border: none;
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
 
-    .nav-movies__links,
-    .nav-movies__account-button,
-    .nav-movies__account-button-cover {
-        display: none;
-    }
+  .nav-movies__links,
+  .nav-movies__account-button,
+  .nav-movies__account-button-cover,
+  .nav-place__account-button {
+    display: none;
+  }
 
-    .nav-movies {
-        justify-content: flex-end;
-    }
+  .nav-movies {
+    justify-content: flex-end;
+  }
 
-    .nav-movies__burger-button {
-        display: flex;
-    }
+  .nav-movies__hamburger-buttone {
+    display: flex;
+  }
+
+  .nav-movies__hamburger-buttone-white {
+    display: flex;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    .nav-place {
-        font-size: 10px;
-        line-height: 16px;
-        gap: 14px;
-    }
+  .nav-place {
+    font-size: 10px;
+    line-height: 16px;
+    gap: 14px;
+  }
 
-    .nav-place__link-login {
-        width: 54px;
-        height: 26px;
-    }
+  .nav-place__link-login {
+    width: 54px;
+    height: 26px;
+  }
+
+  .nav-movies__hamburger-buttone {
+    width: 40px;
+    height: 43px;
+  }
+
+  .nav-movies__hamburger-buttone-white {
+    width: 40px;
+    height: 43px;
+    flex-shrink: 0;
+  }
 }

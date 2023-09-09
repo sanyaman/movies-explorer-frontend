@@ -1,7 +1,7 @@
 .promo {
     display: flex;
     justify-content: space-between;
-    padding: 93px 70px 50px;
+    padding: 75px 70px 50px;
     background-color: #073042;
 }
 
@@ -58,7 +58,7 @@
         flex-direction: column-reverse;
         align-items: center;
         gap: 48px;
-        padding: 160px 44px 55px;
+        padding: 135px 44px 55px;
     }
 
     .promo__container {
@@ -67,11 +67,11 @@
     }
 
     .promo__title {
+        max-width: 680px;
+        margin-bottom: 24px;
         text-align: center;
         font-size: 40px;
         line-height: 50px;
-        max-width: 680px;
-        margin-bottom: 20px;
     }
 
     .promo__subtitle {
@@ -83,7 +83,7 @@
 
 @media screen and (max-width: 480px) {
     .promo {
-        padding: 87px 10px 30px;
+        padding: 70px 10px 30px;
         gap: 44px;
     }
 

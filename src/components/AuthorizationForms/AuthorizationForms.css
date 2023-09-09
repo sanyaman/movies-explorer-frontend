@@ -2,105 +2,174 @@
     display: flex;
     flex-direction: column;
     width: 396px;
-    height: 560px;
-    margin: 70px auto 70px;
+    margin: 0 auto;
+    padding: 70px 0;
 }
 
 .authorize__logo {
     width: 38px;
+    height: 38px;
+    margin-bottom: 40px;
 }
 
 .authorize__title {
-    font-size: 24px;
+    margin: 0 0 40px;
     font-weight: 500;
-    margin: 40px 0 40px;
+    font-size: 24px;
+    line-height: 29px;
 }
 
 .authorize__form {
-    height: 380px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.authorize__label {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #a0a0a0;
+}
+
+.authorize__input {
+    padding: 5px 0 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    border: none;
+    color: #000;
+    border-bottom: 1px solid #e8e8e8;
+    outline: none;
+}
+
+.authorize__input:focus {
+    border-bottom: 1px solid #3456f3;
+}
+
+.error {
+    color: #ff3055;
+}
+
+.authorize__error {
+    box-sizing: border-box;
+    min-height: 24px;
+    padding: 6px 0 5px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #ff3055;
+}
+
+.authorize__buttons {
+    display: flex;
+    flex-direction: column;
+    padding-top: 125px;
+    position: absolute;
+    top: 427px;
 }
 
 .authorize__button {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
     width: 396px;
     height: 45px;
-    border-radius: 3px;
-    background: #3456F3;
-    border: 0px;
-    color: white;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    cursor: pointer;
-    transition: .3s opacity;
-}
-
-.authorize__button:hover {
-    opacity: .8;
-}
-
-.authorize__stride {
-    display: flex;
-    justify-content: center;
-    padding-top: 16px;
+    margin-bottom: 16px;
     font-size: 14px;
+    line-height: 17px;
+    font-weight: 500;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    background-color: #3456f3;
+    cursor: pointer;
+    transition: 0.3s opacity;
+}
+
+/* .authorize__button:hover {
+    opacity: .8;
+} */
+
+.authorize__button:disabled {
+    opacity: 0.5;
+    cursor: default;
 }
 
 .authorize__question {
-    color: #A0A0A0;
+    color: #a0a0a0;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 17px;
 }
 
 .authorize__link {
-    color: #3456F3;
+    color: #3456f3;
     text-decoration: none;
-    margin-left: 6px;
-    transition: .3s opacity;
+    font-size: 14px;
+    line-height: 17px;
+    padding-left: 6px;
+    transition: 0.3s opacity;
 }
 
-.authorize__link:hover {
+/* .authorize__link:hover {
     opacity: .7;
-}
+} */
 
 @media (max-width: 768px) {
     .authorize {
-        margin: 232px auto 30px;
+        padding: 230px 0;
     }
-    .authorize__title {
-    margin: 38px 0 40px;
+
+    .authorize__buttons {
+        top: 590px;
     }
 }
 
-
 @media (max-width: 480px) {
     .authorize {
-        width: 260px;
-        height: 730px;
+        width: 320px;
+        display: flex;
+        justify-content: center;
         align-items: center;
-        margin: 56px auto 30px;
+        padding: 55px 0 30px;
     }
 
-    .authorize__title {
-        margin: 50px 0 80px;
+    .authorize__error {
+        max-width: 260px;
+        box-sizing: border-box;
+        font-size: 8px;
+        line-height: 10px;
+    }
+
+    .authorize__input {
+        box-sizing: border-box;
+        width: 260px;
     }
 
     .authorize__button {
         width: 260px;
         font-size: 12px;
+        line-height: 15px;
     }
 
-    .authorize__message {
-        font-size: 12px;
-        padding-top: 14px;
+    .authorize__buttons {
+        padding-top: 85px;
     }
 
-    .authorize__form {
-        height: 468px;
-    }
-    .authorize__stride {
+    .authorize__question {
         font-size: 12px;
+        line-height: 15px;
+    }
+
+    .authorize__link {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .authorize__title {
+        margin: 0 0 80px;
+    }
+
+    .authorize__logo {
+        margin-bottom: 47px;
     }
 }

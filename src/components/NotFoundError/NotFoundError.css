@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
+    height: 100vh;
 }
 
 .not-found__title {
@@ -46,7 +46,7 @@
         margin: 0 0 284px;
     }
 
-    .not_found__back {
+    .not-found__back {
         font-size: 12px;
         line-height: 15px;
     }
