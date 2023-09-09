@@ -17,8 +17,8 @@
     max-width: 350px;
     width: 100%;
     background-color: #fff;
-    border-radius: 70px;
-    box-shadow: 5px 5px 150px rgb(0 0 0);
+    border-radius: 90px;
+    box-shadow: 5px 5px 150px #086b76;
     margin: 0;
     position: fixed;
     top: calc(50% - 120px);
