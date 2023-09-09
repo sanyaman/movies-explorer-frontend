@@ -49,7 +49,7 @@ function App() {
     if (localStorage.getItem('token')) {
     checkToken();
       }
-      console.log(checkToken)
+      console.log(localStorage)
     // checkToken();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLogged]);
