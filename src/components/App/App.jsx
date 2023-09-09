@@ -46,7 +46,11 @@ function App() {
   }
 
   useEffect(() => {
+    if (localStorage.getItem('token')) {
     checkToken();
+      }
+      console.log(checkToken)
+    // checkToken();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLogged]);
 

@@ -12,7 +12,6 @@ export const MOVIE_DURATION = 40;
 
 export const regExpName = /^[А-ЯA-ZËёh -]+$/imu;
 export const regExpEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-// export const regExpPassword = /^(?=(?:[^A-Z]*[A-Z]){2,4}[^A-Z]*$)(?=(?:[^a-z]*[a-z]){2,4}[^a-z]*$)(?=(?:\D*\d){2,4}\D*$)[A-Za-z\d]+$/;
 
 export const errorMessages = {
     userEmailExists: 'Пользователь с таким email уже существует.',
