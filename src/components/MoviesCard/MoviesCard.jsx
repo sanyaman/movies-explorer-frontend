@@ -39,7 +39,7 @@ function MoviesCard({ movie, isSavedMoviesPage, onDelete, onSave, isSaved, link 
   return (
     <li className='movies-card '>
       <a href={trailerLink} target='_blanck'>
-        <img className='movies-card__image rotation' src={link} alt={nameRU} />
+        <img className='movies-card__image ' src={link} alt={nameRU} />
       </a>
       <div className='movies-card__description'>
         <h3 className='movies-card__title'>{nameRU}</h3>
