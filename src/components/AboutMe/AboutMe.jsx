@@ -1,4 +1,6 @@
 import "./AboutMe.css";
+import { Link } from "react-router-dom";
+import Telegramm from "../../images/telegram.svg";
 import avatar from "../../images/avaa.png";
 
 function AboutMe() {
@@ -15,16 +17,11 @@ function AboutMe() {
                         Российской Федерации и Совета Безопасности Российской Федерации;
                         Верховный главнокомандующий Вооружёнными силами
                     </p>
-                    <a
-                        className="about__link"
-                        href="https://github.com/sanyaman"
-                        rel="noreferrer"
-                        target="_blank"
-                    >
-                        Github
-                    </a>
+                    <Link className="telegramm__link " to="https://t.me/sanyamanjz">
+                        <img src={Telegramm} alt="Telegramm" />
+                    </Link>
                 </div>
-                <img className="about__avatar" src={avatar} alt="фото" />
+                <img className="about__avatar " src={avatar} alt="фото" />
             </div>
         </section>
     );

@@ -16,7 +16,7 @@ function MoviesCard({ movie, isSavedMoviesPage, onDelete, onSave, isSaved, link 
     if (isSaved && !isSavedMoviesPage) {
       return (
         <button
-          className='movies-card__buttone movies-card__buttone_save_active'
+          className='movies-card__buttone movies-card__buttone_save_active jello'
           onClick={handleDeleteMovie}
         />
       );
