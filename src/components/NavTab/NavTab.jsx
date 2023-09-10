@@ -44,7 +44,7 @@ function MoviesMenu() {
     if (pathname === '/' && !isActive) {
       if (isActive)
         return ' nav-movies__link nav-movies__link_place nav-movies__link_active';
-      return 'nav-movies__link nav-movies__link_place';
+      return 'nav-movies__link nav-movies__link_place ';
     }
     if (isActive) return 'nav-movies__link nav-movies__link_active';
     return 'nav-movies__link';
@@ -80,7 +80,7 @@ function MoviesMenu() {
 
   return (
     <nav className='nav-movies'>
-      <div className='nav-movies__links'>
+      <div className='nav-movies__links '>
         <NavLink
           to='/movies'
           className={({ isActive }) => getClassNavText(isActive)}

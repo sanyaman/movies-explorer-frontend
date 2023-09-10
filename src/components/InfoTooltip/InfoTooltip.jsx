@@ -14,8 +14,8 @@ function InfoTooltip({ isOpen, onClose, errorMessage, successMessage }) {
     }, [isOpen, onClose]);
 
     return (
-        <div className={`popup  ${isOpen ? "popup_opened" : ""}`}>
-            <div className="popup__container">
+        <div className={`popup   ${isOpen ? "popup_opened " : ""}`}>
+            <div className="popup__container ">
                 <div className="popup__content">
                     {errorMessage ? (
                         <>
@@ -33,7 +33,7 @@ function InfoTooltip({ isOpen, onClose, errorMessage, successMessage }) {
                                 src={SuccessIcon}
                                 alt="ВСё хорошо"
                             />
-                            <p className="popup__tooltip-title">{successMessage}</p>
+                            <p className="popup__tooltip-title ">{successMessage}</p>
                         </>
                     )}
                 </div>

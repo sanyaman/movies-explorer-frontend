@@ -75,8 +75,8 @@ class Api {
 };
 
 export const api = new Api({
-    // baseUrl: 'http://localhost:3000',
-    baseUrl: 'https://api.movie-hub.nomoreparties.co',
+    baseUrl: 'http://localhost:3000',
+    // baseUrl: 'https://api.movie-hub.nomoreparties.co',
     
     headers: {
         accept: 'application/json',

@@ -3,8 +3,8 @@ import './Checkbox.css';
 
 function FilterCheckbox({ isChecked, toggleCheckbox }) {
     return (
-        <div className='checkbox__cover'>
-            <label className='checkbox__switch'>
+        <div className='checkbox__cover '>
+            <label className='checkbox__switch '>
                 <input
                     className='checkbox'
                     id='checkbox'
@@ -13,9 +13,9 @@ function FilterCheckbox({ isChecked, toggleCheckbox }) {
                     onChange={toggleCheckbox}
                     checked={isChecked}
                 />
-                <span className='checkbox__slider round' />
+                <span className='checkbox__slider round ' />
             </label>
-            <p className='checkbox__title'>Короткометражки</p>
+            <p className='checkbox__title '>Короткометражки</p>
         </div>
     );
 };
