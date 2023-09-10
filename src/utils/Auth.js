@@ -48,8 +48,8 @@ class Auth {
 };
 
 export const auth = new Auth({
-    baseUrl: 'http://localhost:3000',
-    // baseUrl: 'https://api.movie-hub.nomoreparties.co',
+    // baseUrl: 'http://localhost:3000',
+    baseUrl: 'https://api.movie-hub.nomoreparties.co',
     headers: {
         accept: 'application/json',
         'content-Type': 'application/json'
