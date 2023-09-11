@@ -1,5 +1,6 @@
 import './Promo.css';
-import projectLogo from "../../images/logo-planet.svg"
+import '../Animation/icon.css'
+// import projectLogo from "../../images/logo-planet.svg"
 
 function Promo() {
     return (
@@ -9,7 +10,12 @@ function Promo() {
                 <p className="promo__subtitle">Листайте ниже, чтобы узнать больше про этот проект и его создателя.</p>
                 <a className="promo__link" href='#learn-more'>Узнать больше</a>
             </div>
-            <img className="promo__logo-image bounce"  src={projectLogo} alt="Логотип проекта" />
+            {/* <img className="promo__logo-image bounce "  src={projectLogo} alt="Логотип проекта" /> */}
+            <div className="atom">
+                <div className="line line-1"></div>
+                <div className="line line-2"></div>
+                <div className="line line-3"></div>
+            </div>
         </section>
     )
 };
